@@ -1,0 +1,39 @@
+#mygallery table img{
+    width: 200px;
+    padding: 0;
+    margin:0;
+}
+
+#register form{
+    text-align: center;
+    font-size: 15px;
+    width: 250px;
+}
+#register form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    color: red;
+}
+table{
+    border: 2px solid black;
+    padding: 0;
+    margin:0;
+}
+table td{
+    padding:0;
+    margin:0;
+}
+
+.inputfield{
+    color: black;
+}
+
+*{
+    color:rgb(183, 25, 25);
+}
+
+footer {
+    background-color: black;
+    color: #ffffff;
+    padding: 25px;
+}
