@@ -37,3 +37,29 @@ footer {
     color: #ffffff;
     padding: 25px;
 }
+.nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+}
+
+li {
+    list-style: none;
+    padding: 30px;
+}
+
+span{
+    display: block;
+}
+
+@media (max-width:768px){
+     .nav{
+        display: inline;
+    }
+}
+
+@media (max-width:495px) {
+
+    
+}
