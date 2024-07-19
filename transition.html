@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animations</title>
+  <style>
+    @keyframes colorChange {
+      0% { background-color: red; }
+      50% { background-color: yellow; }
+      100% { background-color: green; }
+    }
+
+    .animate {
+      width: 100px;
+      height: 100px;
+      animation-name: colorChange;
+      animation-duration: 4s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    .transition {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      transition: background-color 2s ease;
+    }
+
+    .transition:hover {
+      background-color: blue;
+    }
+
+    @keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+    }
+
+.slide {
+  animation-name: slide-in;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: background-color 0.5s ease;
+}
+
+.box:hover {
+  background-color: red;
+}
+
+  </style>
+</head>
+<body>
+  <div class="animate"></div>
+  <div class="transition"></div>
+
+  <!-- @keyframes animation-name {
+    from { /* Initial state */ }
+    to { /* Final state */ }
+  }
+  
+  .element {
+    animation-name: animation-name;
+    animation-duration: duration;
+    animation-timing-function: timing-function;
+    animation-delay: delay;
+    animation-iteration-count: iteration-count;
+    animation-direction: direction;
+  }
+  Example:
+ 
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .slide {
+    animation-name: slide-in;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+  } -->
+
+  <div class="slide">This element slides in from the left.</div>
+
+  <!-- .element {
+    transition-property: property;
+    transition-duration: duration;
+    transition-timing-function: timing-function;
+    transition-delay: delay;
+  } -->
+  <!-- .box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: background-color 0.5s ease;
+  }
+  
+  .box:hover {
+    background-color: red;
+  } -->
+
+  <!-- <div class="box">Hover over me!</div> -->
+</body>
+</html>
+CSS Transitions Example
+html
+Copy code
