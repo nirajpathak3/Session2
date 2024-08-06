@@ -17,7 +17,7 @@
             <ul class="nav">
                 <li><a href="http://google.com">Home</a></li>
                 <li>About Us</li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li><a id="navelemnt" href="gallery.html">Gallery</a></li>
                 <li>Contact Us</li>
                 <li><a href="register.html">Login/Register</a></li> 
             </ul>
@@ -29,7 +29,7 @@
             </div>
         </header>
 
-        <div id="main">
+        <main>
             <section id="register">
                 <div class="row">
                     <div class="col-sm-4">
@@ -40,28 +40,52 @@
                     </div>
                     <div class="col-sm-4">
                         <h1>Registration </h1>
-                <form action="register.js" method="post" enctype="multipart/form-data">
+                <form action="#" method="post" enctype="multipart/form-data">
                     <input type="text" class="inputfield" name="firstName" required placeholder="Enter your first name..."><br>
-                    <input type="text" name="lastName" required placeholder="Enter your last name...">
-                    <input type="email" name="email" required placeholder="Enter your email...">
+                    <input type="text" class="inputfield" name="lastName"  placeholder="Enter your last name...">
+                    <input type="email" class="inputfield"  name="email"  placeholder="Enter your email...">
                     <input type="file" name="avatar">
-                    <input type="password" name="password" required min="10" minlength="10" placeholder="Enter your password...">
-                    <input type="submit" name="Submit" value="Submit" placeholder="Enter your password...">
+                    <input type="password" name="password"  min="10" minlength="10" placeholder="Enter your password...">
                 </form>  
+                <Button id="regBtn" value="Submit" placeholder="Enter your password..."> REgister</Button>
+                <Button id="removeBtn" value="RemoveBtn">Remove</Button>
                     </div>
                 </div>
                             
                 
-            </section>    
+            </section>  
+            <section id="blogs">
+                Hey! Here is Blog section.
+            </section>  
 
-        </div>
+        </main>
 
         <footer>
             Subscription box, Links, Contact numbers, address map.            
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
         <script>
-            // asdgsahd
+            const elementVar = document.getElementById("regBtn");
+            const removeBtn = document.getElementById("removeBtn");
+
+            function callbackfn() {
+                console.log("Event has been triggered!");
+            }
+
+            function removeListener() {
+                elementVar.removeEventListener("click", callbackfn);
+                console.log("Event listener has been removed!");
+            }
+
+            elementVar.addEventListener("click", callbackfn);
+            removeBtn.addEventListener("click", removeListener);
+            
+
+            var content = document.getElementsByTagName("main");
+            // alert(content);
+
+            document.getElementsByTagName("header")[0].children[1].style.display = 'none';        
                 
         </script>
 
