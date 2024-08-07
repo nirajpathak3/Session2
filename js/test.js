@@ -61,7 +61,7 @@ const users = [
 // function fetchData() {
 //     try {
 //         let response = await getUsers();//fetch('https://api.example.com/data'); //1
-            const user = findUser('name');
+            // const user = findUser('name');
 //         // let data = await response.json(); //2
 //         console.log(response);
 //     } catch (error) {
@@ -87,10 +87,15 @@ const users = [
 //     }, 6000);
 // }
 // function task3(callback) {
-//     setTimeout(() => {
+//     try {
+//         setTimeout(() => {
 //         console.log("Task 3 completed");
 //         callback();
 //     }, 3000);
+//     } catch (error) {
+//         console.error(error);
+//         throw error
+//     }    
 // }
 
 // task1(() => {
@@ -117,19 +122,43 @@ const users = [
 //   console.log(findUser('Abc'));
 
 
-function fetchData() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("Data fetched!");
-        }, 1000);
-    });
-}
+// function fetchData() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             const users = fetch('http://localhost:4000/api/users')
+// return users;
+//         }, 1000);
+//     });
+// }
 
-fetchData()
-    .then(data => {
-        console.log(data); // "Data fetched!"
-    })
-    .catch(error => {
-        console.error(error);
-    });
+// fetchData()
+//     .then(users => {
+//         console.log(data); // "Data fetched!"
+//         return data
+//     })
+//     .then(
+//         data2 => {
+//             console.log(data2); // "Data fetched!"
+//         }
+//     )
+//     .catch(error => {
+//         console.error(error);
+//     })
+//     .finally();
+
+console.log('Start');
+
+setTimeout(() => {
+  console.log('Timeout callback');
+}, 2000);
+
+
+fetch('http://localhost:4000/api/users')
+  .then(response => response.json())
+  .then(data => console.log('Fetched data', data))
+  .catch(error =>{
+    console.error(error)
+  });
+
+console.log('End');
 
