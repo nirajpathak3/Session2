@@ -152,7 +152,7 @@ setTimeout(() => {
   console.log('Timeout callback');
 }, 2000);
 
-
+// Chaning of Promises
 fetch('http://localhost:4000/api/users')
   .then(response => response.json())
   .then(data => console.log('Fetched data', data))
@@ -161,4 +161,41 @@ fetch('http://localhost:4000/api/users')
   });
 
 console.log('End');
+
+// Promise.all
+const promise1 = new Promise(resolve => setTimeout(resolve, 1000, 'one'));
+const promise2 = new Promise(resolve => setTimeout(resolve, 2000, 'two'));
+
+Promise.all([promise1, promise2]).then(values => {
+    console.log(values); // ["one", "two"]
+});
+
+// Promise.race
+const promise1 = new Promise(resolve => setTimeout(resolve, 1000, 'one'));
+const promise2 = new Promise(resolve => setTimeout(resolve, 2000, 'two'));
+
+Promise.race([promise1, promise2]).then(value => {
+    console.log(value); // "one"
+});
+
+// Async/Await
+
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Data fetched!");
+        }, 1000);
+    });
+}
+
+async function asyncFunction() {
+    try {
+        let data = await fetchData();
+        console.log(data); // "Data fetched!"
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+asyncFunction();
 
